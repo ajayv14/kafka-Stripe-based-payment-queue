@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>products</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+<style >
+  .mar {
+  	margin:1px; 
+  	margin-top:5%; 
+  }
+  
+</style>
+
+<script th:inline="javascript">
+
+	function buyProduct(productId){
+		
+		
+		url = "/purchase";
+		data ={productId:productId};
+		$.post(url,data,function(data,status){
+			console.log('data sent: ${data} status: ${status}');
+		});
+		
+	};
+
+
+</script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span style="color:white" class="fas fa-fighter-jet"></span> Dealz.com</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">cart</a></li>
+     
+    </ul>
+  </div>
+</nav>
+
+
+<div style="height:35px">
+
+</div>
+<h1 class="text-center"><span class="fas fa-fire" style="color:orange"></span> Deals</h1>
+
+
+<div style="height:55px">
+
+</div>
+
+
+<div class="col-md-2">
+</div>
+
+<div id="products" class="col-md-8">
+  <div class=" col-md-3 mar" >
+	 <div id="product_1" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./cellphone-device-display-699122.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input id="My-Phone" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'My-Phone' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+   <div class="col-md-3 mar">
+	 <div id="product_2" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./analytics-business-charts-257949.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input th:id="My-PC-Air" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'My-PC-Air' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+   <div class="col-md-3 mar">
+	 <div id="product_3" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./fashion-footwear-shoes-19090.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input th:id="F-Shoes" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'F-Shoes' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+  
+   	<div class="col-md-3 mar">
+	 <div id="product_4" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./animal-cat-cute-45201.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input th:id="kitty" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'kitty' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+  <div class="col-md-3 mar">
+	 <div id="product_5" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./moped-motor-motorbike-159192.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input th:id="mobike" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'mobike' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+  <div class="col-md-3 mar">
+	 <div id="product_6" class="col-md-12 ">
+	 	<img Height="200px" Width="250px" src="./aroma-art-bean-296285.jpg" class="img"/>		 	 
+	 </div> 
+	 </br>
+	 <div class="col-md-2">
+	  <input th:id="coffee-grounds" style="width:250px" class="btn btn-warning" type="button" th:onclick="'buyProduct(\'' + 'coffee-grounds' + '\');'" value="Buy $100">
+	 </div>
+	
+  </div>	
+  
+
+  
+ 
+  
+</div>
+
+<div class="col-md-2">
+</div>
+
+
+
+
+<div>
+
+</div>
+
+</body>
+</html>
